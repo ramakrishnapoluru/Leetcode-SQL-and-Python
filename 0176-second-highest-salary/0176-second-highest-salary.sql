@@ -1,8 +1,11 @@
-# Write your MySQL query statement below
-SELECT
-    IFNULL(
-      (SELECT DISTINCT Salary
-       FROM Employee
-       ORDER BY Salary DESC
-        LIMIT 1 OFFSET 1),
-    NULL) AS SecondHighestSalary
+/* Write your T-SQL query statement below */
+
+-- SELECT ISNULL(
+--     (SELECT salary 
+-- FROM Employee
+-- ORDER BY salary DESC OFFSET 1 ROWS FETCH NEXT 1 ROWS ONLY)
+--     ,NULL) AS SecondHighestSalary
+
+SELECT ISNULL(MAX(salary),NULL) AS SecondHighestSalary
+FROM Employee WHERE salary<(SELECT MAX(salary) AS SecondHighestSalary
+FROM Employee )
