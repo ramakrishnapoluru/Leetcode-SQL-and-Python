@@ -10,3 +10,5 @@ ISNULL(LAG(student) OVER(ORDER BY ID),student)
 END 
 AS student
 FROM Seat
+
+
