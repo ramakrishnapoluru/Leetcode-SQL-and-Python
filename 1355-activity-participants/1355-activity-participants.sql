@@ -12,8 +12,30 @@
 -- GROUP BY activity
 --     ) AS A
     
-select activity 
+select
+activity
 from friends
 group by activity
-having count(*)> (select TOP 1 count(*) from friends group by activity order by 1)
-and count(*)< (select TOP 1 count(*) from friends group by activity order by 1 desc)
+having count(id) not in
+(
+    select
+        max(cnt) as cnt
+        from
+        (select
+    activity,
+    count(id) as cnt
+    from friends
+    group by activity) tmp1
+    
+    union
+    
+      select
+        min(cnt) as cnt
+        from
+        (select
+    activity,
+    count(id) as cnt
+    from friends
+    group by activity) tmp2
+
+)
