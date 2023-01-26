@@ -27,7 +27,7 @@ SELECT request_at AS day
 				WHEN STATUS <> 'completed'
 					THEN 1.0
 				ELSE 0.0
-				END) / count(*) AS DECIMAL(10, 2)) AS 'cancellation rate'
+				END) / count(1) AS DECIMAL(10, 2)) AS 'cancellation rate'
 FROM trips t
 JOIN users rider ON t.client_id = rider.users_id
 JOIN users driver ON t.driver_id = driver.users_id
