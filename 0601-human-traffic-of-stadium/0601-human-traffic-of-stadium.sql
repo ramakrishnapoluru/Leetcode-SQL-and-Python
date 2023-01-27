@@ -15,11 +15,9 @@ AS (
 			) people_lead1
 	FROM Stadium
 	)
-SELECT 
-id
+SELECT id
 	,visit_date
 	,people
-    
 FROM CTE_Stadium
 WHERE (
 		people >= 100
@@ -31,9 +29,9 @@ WHERE (
 		AND people_lead2 >= 100
 		AND people_lead1 >= 100
 		)
-    OR (
-    people >= 100
-	    AND people_lag1 >= 100
+	OR (
+		people >= 100
+		AND people_lag1 >= 100
 		AND people_lead1 >= 100
-    )
+		)
 ORDER BY visit_date
