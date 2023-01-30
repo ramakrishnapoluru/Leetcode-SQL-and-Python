@@ -6,7 +6,7 @@ AS (
 	SELECT seller_id
 		,I.item_id
 		,item_brand
-		,COUNT(1) OVER (PARTITION BY seller_id) AS CNT
+		-- ,COUNT(1) OVER (PARTITION BY seller_id) AS CNT
 		,ROW_NUMBER() OVER (
 			PARTITION BY seller_id ORDER BY order_date
 			) AS RN
