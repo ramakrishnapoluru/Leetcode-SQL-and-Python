@@ -9,7 +9,7 @@ class Solution:
         # return namesfinal
         kvp=dict(zip(heights,names))
         names.clear()
-        # print(kvp)
+
         for i in sorted(kvp.keys(),reverse=True):
             names.append(kvp[i])
         return names
