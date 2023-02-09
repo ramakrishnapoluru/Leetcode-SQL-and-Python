@@ -3,6 +3,7 @@ class Solution:
         result=[]
         for i in nums:
             result.extend(list(list(str(i))))
-        for i,v in enumerate(result):
-            result[i]=eval(v)
-        return result
+        # for i,v in enumerate(result):
+        #     result[i]=eval(v)
+        # return result
+        return map(int,result)
