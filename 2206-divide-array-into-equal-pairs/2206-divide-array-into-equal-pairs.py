@@ -5,7 +5,6 @@ class Solution:
         print(nums)
         if len(nums)%2==0:
             for i in range(0,len(nums),2):
-                print(i,i+1)
                 if nums[i]==nums[i+1]:
                     falg=False
                 else:
