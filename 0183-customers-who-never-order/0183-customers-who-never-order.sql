@@ -1,6 +1,6 @@
 /* Write your T-SQL query statement below */
 
-SELECT name as Customers 
+SELECT 
+name as Customers
 FROM Customers C LEFT JOIN Orders O 
-ON C.id=O.customerId
-WHERE CustomerId IS NULL
+ON C.id=O.customerId WHERE customerId IS NULL
