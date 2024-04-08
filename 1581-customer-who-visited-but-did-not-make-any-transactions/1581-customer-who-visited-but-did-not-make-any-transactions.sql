@@ -1,7 +1,5 @@
 /* Write your T-SQL query statement below */
 
-
-
 SELECT customer_id
 	,SUM(CASE 
 			WHEN T.transaction_id IS NULL
@@ -15,4 +13,4 @@ HAVING SUM(CASE
 			WHEN T.transaction_id IS NULL
 				THEN 1
 			ELSE 0
-			END)>0
+			END) > 0
