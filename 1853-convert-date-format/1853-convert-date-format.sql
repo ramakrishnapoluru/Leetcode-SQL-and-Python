@@ -3,7 +3,7 @@
 
 
 SELECT CONCAT (
-		DATENAME(WEEKDAY, day)
+		DATENAME(weekday, day)
 		,', '
 		,DATENAME(month, day)
 		,' '
